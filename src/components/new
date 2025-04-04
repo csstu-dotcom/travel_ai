@@ -1,0 +1,63 @@
+<div>
+        <section className="trip-details">
+        <div className="container">
+            <div className="row">
+                <div className="col-md-12">
+                    <h2>Generated Trip Details</h2>
+                </div>
+            </div>
+            <div className="row">
+                <div className="col-md-6">
+                    <h3>Hotel Options</h3>
+                    {data.hotelOptions.map((hotel, index) => (
+                        <div key={index} className="hotel-card">
+                            <div className="hotel-image">
+                                <img src={hotel.hotelImageURL} alt={hotel.hotelName} />
+                            </div>
+                            <div className="hotel-details">
+                                <h4>{hotel.hotelName}</h4>
+                                <p>{hotel.hotelAddress}</p>
+                                <p>Price: {hotel.price}</p>
+                                <p>Rating: {hotel.rating}</p>
+                                <p>{hotel.description}</p>
+                            </div>
+                        </div>
+                    ))}
+                </div>
+                <div className="col-md-6">
+                    <h3>Budget Tips</h3>
+                    <ul>
+                        {data.itinerary.budgetTips.map((tip, index) => (
+                            <li key={index}>{tip}</li>
+                        ))}
+                    </ul>
+                </div>
+            </div>
+            <div className="row">
+                <div className="col-md-12">
+                    <h3>Day-wise Itinerary</h3>
+                </div>
+
+                <div className="col-md-6">
+                    <h4>{data.day1.title}</h4>
+                    <p>{data.day1.description}</p>
+                    <ul>
+                        {data.day1.activities.map((activity, index) => (
+                            <li key={index}>{activity}</li>
+                        ))}
+                    </ul>
+
+                    <h4>{data.day2.title}</h4>
+                    <p>{data.day2.description}</p>
+                    <ul>
+                        {data.day2.activities.map((activity, index) => (
+                            <li key={index}>{activity}</li>
+                        ))}
+                    </ul>
+
+
+        </div>
+        </div>
+        </div>
+        </section>
+    </div>
